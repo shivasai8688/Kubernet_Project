@@ -16,8 +16,3 @@ commonLabels:
   
 # Name Prefix
 namePrefix: jenkins-
-
-# Configurations
-configurations:
-  - configmaps
-  - secrets
