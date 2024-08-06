@@ -13,11 +13,7 @@ resources:
 # Common Labels
 commonLabels:
   app: jenkins
-
-# Patches
-patchesStrategicMerge:
-  - serviceaccount.yaml
-
+  
 # Name Prefix
 namePrefix: jenkins-
 
