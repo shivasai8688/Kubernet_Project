@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins
-  namespace: jenkins
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
         - name: jenkins
           image: jenkins/jenkins:alpine
           resources:
-            {}
+            # Uncomment and set resource limits and requests as needed
             # limits:
             #   memory: "2Gi"
             #   cpu: "1000m"
