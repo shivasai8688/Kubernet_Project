@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: jenkins
-  namespace: jenkins
+  namespace: default
   labels:
     app: jenkins
   annotations:
@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: jenkins/server.com
+    - host: jenkins.server.com
       http:
         paths:
           - path: /
