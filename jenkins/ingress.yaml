@@ -21,6 +21,6 @@ spec:
                 port:
                   number: 80
   tls:
-    - hosts:
-        - jenkins.yourdomain.com
-      secretName: ssl-jenkins/server.com
+  - hosts:
+      - jenkins.yourdomain.com
+    secretName: ssl-jenkins-server-com
