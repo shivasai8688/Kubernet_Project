@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: react
+  labels:
+    app: react
+spec:
+  selector:
+    matchLabels:
+      app: react
+  replicas: 1                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: react                                        # 6
+    spec:
+      volumes:
+        - name: datastore
+          persistentVolumeClaim:
+            claimName: react-fast
+      containers:
+        - name: react
+          image: shivasaicr/npm-docker-repo:latest
+          imagePullPolicy: IfNotPresent                   # 7
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/lib/react
+              name: datastore
