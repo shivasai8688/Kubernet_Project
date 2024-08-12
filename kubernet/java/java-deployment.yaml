@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: java
+  labels:
+    app: java
+spec:
+  selector:
+    matchLabels:
+      app: java
+  replicas: 1                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: java                                         # 6
+    spec:
+      volumes:
+        - name: javastore
+          persistentVolumeClaim:
+            claimName: java-fast
+      containers:
+        - name: java
+          image: shivasaicr/mvn-docker-repo:1.0.0
+          imagePullPolicy: IfNotPresent                   # 7
+          ports:
+            - containerPort: 8080   
+          volumeMounts:
+            - mountPath: /var/lib/java
+              name: javastore
