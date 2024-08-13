@@ -18,7 +18,7 @@ spec:
       serviceAccountName: jenkins-admin
       containers:
         - name: jenkins
-          image: jenkins/jenkins:alpine
+          image: jenkins/jenkins:lts
           resources:
             # Uncomment and set resource limits and requests as needed
             # limits:
