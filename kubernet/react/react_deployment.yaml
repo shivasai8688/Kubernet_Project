@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment                                          # 1
+kind: Deployment
 metadata:
   name: react
   labels:
@@ -8,17 +8,17 @@ spec:
   selector:
     matchLabels:
       app: react
-  replicas: 1                                             # 2
+  replicas: 1
   minReadySeconds: 15
   strategy:
-    type: RollingUpdate                                   # 3
-    rollingUpdate: 
-      maxUnavailable: 1                                   # 4
-      maxSurge: 1                                         # 5
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
-        app: react                                        # 6
+        app: react
     spec:
       volumes:
         - name: datastore
@@ -27,7 +27,7 @@ spec:
       containers:
         - name: react
           image: shivasaicr/npm-docker-repo:latest
-          imagePullPolicy: IfNotPresent                   # 7
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           volumeMounts:
