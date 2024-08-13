@@ -17,3 +17,6 @@ commonLabels:
   
 # Name Prefix
 namePrefix: jenkins-
+
+# Name Suffix
+nameSuffix: -prod
