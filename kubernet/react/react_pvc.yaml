@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: react-fast   # Updated to match the PVC name in the Deployment
+  name: react-fast
 spec:
   accessModes:
     - ReadWriteOnce
