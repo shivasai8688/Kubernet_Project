@@ -6,14 +6,14 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: react.example.com                             # 1
+  - host: react.example.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: react-service                         # 2
+            name: react-service
             port:
               number: 80
-  ingressClassName: nginx                               # 3
+  ingressClassName: nginx
