@@ -16,15 +16,36 @@ This repository contains Kubernetes manifests and configurations to deploy Jenki
 * <b>cert-manager</b> for TLS certificate management (if using Ingress)
 
 ## Setup
-<b>1.</b> Clone the Repository
+<b>1.</b> ## Clone the Repository
 ```
 git clone <repository-url>
 cd <repository-directory>
 ```
 
-<b>2.</b> Apply the Manifests
+<b>2.</b> ## Apply the Manifests
 Use Kustomize to build and apply the manifests:
 ```
 kubectl apply -k .
 
 ```
+
+<b>3.</b> ## Verify Deployment
+Ensure all resources are correctly deployed:
+```
+kubectl get deployments -n default
+kubectl get services -n default
+kubectl get ingress -n default
+kubectl get pvc -n default
+kubectl get pv
+kubectl get serviceaccounts -n default
+kubectl get clusterrolebindings
+```
+
+<b>4.</b> ## Access Jenkins
+After deployment, Jenkins will be accessible via the Ingress hostname specified in ingress.yaml. Ensure that DNS or /etc/hosts file is configured to resolve the hostname to your Kubernetes cluster's external IP.
+
+<b>5.</b> ## Prometheus Integration
+The Jenkins service is annotated for Prometheus scraping. Ensure Prometheus is configured to scrape metrics from the Jenkins endpoint:
+
+* Path: <b/
+* <b>Port:</b> 8080
