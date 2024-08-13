@@ -13,4 +13,4 @@ This repository contains Kubernetes manifests and configurations to deploy Jenki
 * Kubernetes cluster
 * <b>kubectl</b> command-line tool
 * <b>kustomize</b> command-line tool (or <b>kubectl</b> with Kustomize support)
-* <link>cert-manager</link> for TLS certificate management (if using Ingress)
+* <ul>cert-manager</ul> for TLS certificate management (if using Ingress)
