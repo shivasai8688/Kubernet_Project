@@ -17,3 +17,7 @@ This repository contains Kubernetes manifests and configurations to deploy Jenki
 
 ## Setup
 <b>1.</b> Clone the Repository
+```
+git clone <repository-url>
+cd <repository-directory>
+```
