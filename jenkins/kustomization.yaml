@@ -6,9 +6,10 @@ namespace: default
 resources:
   - deployment.yaml
   - ingress.yaml
+  - pv.yaml
   - service.yaml
   - serviceAccount.yaml
-  - storage.yaml
+  - pvc.yaml
 
 # Common Labels
 commonLabels:
