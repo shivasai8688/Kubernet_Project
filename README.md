@@ -8,3 +8,9 @@ This repository contains Kubernetes manifests and configurations to deploy Jenki
 * <b>service.yaml:</b> Exposes Jenkins service with appropriate ports and Prometheus annotations.
 * <b>serviceAccount.yaml:</b> Creates the Jenkins ServiceAccount.
 * <b>kustomization.yaml:</b> Kustomize configuration for managing the deployment and resources.
+
+## Prerequisites
+* Kubernetes cluster
+* <b>kubectl</b> command-line tool
+* <b>kustomize</b> command-line tool (or <b>kubectl</b> with Kustomize support)
+* <link>cert-manager</link> for TLS certificate management (if using Ingress)
