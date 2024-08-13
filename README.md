@@ -16,3 +16,4 @@ This repository contains Kubernetes manifests and configurations to deploy Jenki
 * <b>cert-manager</b> for TLS certificate management (if using Ingress)
 
 ## Setup
+**1. Clone the Repository
