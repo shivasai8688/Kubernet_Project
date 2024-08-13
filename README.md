@@ -21,3 +21,10 @@ This repository contains Kubernetes manifests and configurations to deploy Jenki
 git clone <repository-url>
 cd <repository-directory>
 ```
+
+<b>2.</b> Apply the Manifests
+Use Kustomize to build and apply the manifests:
+```
+kubectl apply -k .
+
+```
