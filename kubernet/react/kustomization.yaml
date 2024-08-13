@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 # Namespace where the resources will be deployed
-namespace: prod                 # Sets the namespace to 'prod'
+namespace: default              # Sets the namespace to 'prod'
 
 # Prefix and suffix for resource names
 namePrefix: myapp-              # Add a prefix to the resource names
