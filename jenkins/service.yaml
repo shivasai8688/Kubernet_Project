@@ -13,11 +13,14 @@ spec:
   type: LoadBalancer
   ports:
     - name: http
-      port: 80
-      targetPort: 8080
+      port: 80             # Expose service on port 80 for HTTP
+      targetPort: 8080     # Forward traffic to container's HTTP port 8080
+      protocol: TCP
+    - name: https
+      port: 443            # Expose service on port 443 for HTTPS
+      targetPort: 8443     # Forward traffic to container's HTTPS port 8443
       protocol: TCP
     - name: jnlp
-      port: 50000
-      targetPort: 50000
+      port: 50000          # Expose service on port 50000 for JNLP
+      targetPort: 50000    # Forward traffic to container's JNLP port 50000
       protocol: TCP
-
