@@ -1,10 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Deploy') {
+        stage('React Path') {
             steps {
                 script {
-                    sh 'kubectl apply -k .'
+                    dir('kubernet/react') {  // Change directory
+                        sh 'kubectl apply -k .'  // Run kubectl within the directory
+                    }
                 }
             }
         }
