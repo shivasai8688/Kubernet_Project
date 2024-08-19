@@ -11,7 +11,7 @@ nameSuffix: -prod
 # Resources to include in the kustomization
 resources:
   - python_deployment.yaml
-  - pyhton_hpa.yaml
+  - python_hpa.yaml
   - python_ingress.yaml
   - python_pvc.yaml
   - python_service.yaml
