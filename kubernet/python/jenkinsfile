@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    environment {
+        // Append /home/ubuntu/google-cloud-sdk/bin to the existing PATH
+        PATH = "/home/ubuntu/google-cloud-sdk/bin:${env.PATH}"
+    }
+    stages {
+        stage('Configure Kubernetes Cluster') {
+            steps {
+                // Configure Kubernetes cluster
+                sh 'gcloud container clusters get-credentials mycluster --zone asia-south1-a --project level-night-428408-r0'
+            }
+        }
+        stage('Deploy with Kustomize') {
+            steps {
+                dir('kubernet/python') {
+                    // Check Kubernetes client version
+                    sh 'kubectl version --client'
+                    // Apply Kubernetes configurations using Kustomize
+                    sh 'kubectl apply -k .'
+                }
+            }
+        }
+    }
+    post {
+        failure {
+            echo 'Pipeline failed. Please check the logs for details.'
+        }
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+    }
+}
