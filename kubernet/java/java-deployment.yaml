@@ -26,7 +26,7 @@ spec:
             claimName: java-fast
       containers:
         - name: java
-          image: shivasaicr/mvn-docker-repo:1.0.0
+          image: kulalajaswanth/mvn-docker-repo:1.0.0
           imagePullPolicy: IfNotPresent                   # 7
           ports:
             - containerPort: 8080   
