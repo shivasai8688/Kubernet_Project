@@ -10,4 +10,3 @@ spec:
   storageClassName: standard
   hostPath: 
     path: /mnt/data/java-fast
-
