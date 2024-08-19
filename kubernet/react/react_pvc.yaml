@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: react-fast   # Updated to match the PVC name in the Deployment
+  name: myapp-react-fast-prod
 spec:
   accessModes:
     - ReadWriteOnce
-  volumeMode: Filesystem
   resources:
     requests:
       storage: 10Gi
-  storageClassName: standard
+  storageClassName: local-path
