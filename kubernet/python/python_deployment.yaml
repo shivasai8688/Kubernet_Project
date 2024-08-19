@@ -31,5 +31,5 @@ spec:
           ports:
             - containerPort: 5000
           volumeMounts:
-            - mountPath: /var/lib/react
+            - mountPath: /var/lib/python
               name: datastore
