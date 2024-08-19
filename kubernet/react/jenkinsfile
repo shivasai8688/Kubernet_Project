@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy with Kustomize') {
             steps {
-                dir('Kubernet_Project/kubernet/react') {
+                dir('kubernet/react') {
                     // Check Kubernetes client version
                     sh 'kubectl version --client'
                     // Apply Kubernetes configurations using Kustomize
