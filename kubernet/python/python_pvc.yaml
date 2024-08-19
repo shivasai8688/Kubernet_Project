@@ -1,12 +1,12 @@
 apiVersion: v1
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 metadata:
-  name: python-fast-pv
+  name: python-fast
 spec:
   accessModes:
     - ReadWriteOnce
-  capacity:
-    storage: 10Gi
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Gi
   storageClassName: standard
-  hostPath: 
-    path: /mnt/data/python-fast
