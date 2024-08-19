@@ -7,6 +7,6 @@ spec:
     storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+  storageClassName: standard
   hostPath:
     path: /mnt/data
