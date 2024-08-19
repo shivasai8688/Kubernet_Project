@@ -6,14 +6,27 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: react.example.com
+  - host: yourdomain.com # Replace with your domain or leave empty for default
     http:
       paths:
+      - path: /java
+        pathType: Prefix
+        backend:
+          service:
+            name: java-service # Replace with the name of your Java service
+            port:
+              number: 8080
+      - path: /python
+        pathType: Prefix
+        backend:
+          service:
+            name: python-service # Replace with the name of your Python service
+            port:
+              number: 5000
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: react-service
+            name: react-service # This should match the actual name of your React service
             port:
               number: 80
-  ingressClassName: nginx
