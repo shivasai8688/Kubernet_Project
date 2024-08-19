@@ -1,4 +1,4 @@
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: react-hpa
@@ -9,21 +9,4 @@ spec:
     name: react
   minReplicas: 1
   maxReplicas: 10
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50
-  - type: Object
-    object:
-      metric:
-        name: requests-per-second
-      describedObject:
-        apiVersion: networking.k8s.io/v1
-        kind: Ingress
-        name: react-ingress
-      target:
-        type: Value
-        value: 10k
+  targetCPUUtilizationPercentage: 50
