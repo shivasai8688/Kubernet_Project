@@ -1,1 +1,36 @@
-hi
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python
+  labels:
+    app: python
+spec:
+  selector:
+    matchLabels:
+      app: react
+  replicas: 1
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      volumes:
+        - name: datastore
+          persistentVolumeClaim:
+            claimName: python-fast
+      containers:
+        - name: python
+          image: kulalajaswanth/python-docker-repo:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - mountPath: /var/lib/react
+              name: datastore
+
