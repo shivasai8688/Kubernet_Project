@@ -23,7 +23,7 @@ spec:
       volumes:
         - name: datastore
           persistentVolumeClaim:
-            claimName: react-fast
+            claimName: myapp-react-fast-prod
       containers:
         - name: react
           image: basilvarghese/myapp-frontend:latest
