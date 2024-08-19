@@ -15,3 +15,4 @@ resources:
   - react_ingress.yaml
   - react_pvc.yaml
   - react_service.yaml
+  - react_pv.yaml
