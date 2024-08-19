@@ -7,7 +7,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: react
+      app: python
   replicas: 1
   minReadySeconds: 15
   strategy:
@@ -33,4 +33,3 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/react
               name: datastore
-
