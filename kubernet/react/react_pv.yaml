@@ -8,5 +8,5 @@ spec:
   capacity:
     storage: 10Gi
   storageClassName: standard
-  hostPath: 
+  hostPath:
     path: /mnt/data/react-fast
