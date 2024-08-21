@@ -62,3 +62,25 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ### Conclusion
 - Jenkins should now be installed and accessible from your browser. You can proceed with configuring your Jenkins instance and setting up your CI/CD pipelines.
+
+
+
+# Install Google Cloud CLI and kubectl on Jenkins Server
+
+This guide provides instructions to install the Google Cloud CLI and kubectl on your Jenkins server. These tools are essential for managing Google Cloud resources and Kubernetes clusters.
+
+## Prerequisites
+
+- Jenkins server running on an AWS EC2 instance (or any Linux-based server).
+- SSH access to the server.
+
+## Steps
+
+### 1. Install Google Cloud CLI
+
+Google Cloud CLI (gcloud) is needed to manage Google Cloud resources, including Kubernetes clusters.
+
+#### 1.1. Download Google Cloud CLI
+```
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
+```
