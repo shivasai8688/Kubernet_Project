@@ -84,3 +84,54 @@ Google Cloud CLI (gcloud) is needed to manage Google Cloud resources, including 
 ```
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
 ```
+
+#### 1.2. Extract the Archive
+```
+tar -xf google-cloud-cli-linux-x86_64.tar.gz
+```
+#### 1.3. Run the Installation Script
+```
+./google-cloud-sdk/install.sh
+```
+- You can also run the script with additional options:
+```
+./google-cloud-sdk/install.sh --help
+```
+#### 1.4. Initialize the gcloud CLI
+After installation, initialize the gcloud CLI to configure the environment:
+```
+./google-cloud-sdk/bin/gcloud init
+```
+- Follow the prompts to set up your Google Cloud account and project.
+
+### 2. Install kubectl
+kubectl is the command-line tool for interacting with Kubernetes clusters.
+
+#### 2.1. Download kubectl
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+```
+#### 2.2. Validate the Binary (Optional)
+- You can validate the kubectl binary by checking its SHA-256 checksum:
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+```
+- Validate the checksum:
+```
+echo "$(cat kubectl.sha256) kubectl" | sha256sum --check
+```
+#### 2.3. Install kubectl
+- Move the binary to your /usr/local/bin directory:
+```
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+```
+#### 2.4. Verify Installation
+- Check the kubectl version to ensure it was installed correctly:
+```
+kubectl version --client
+```
+#### Conclusion
+- You have successfully installed the Google Cloud CLI and kubectl on your Jenkins server. You can now create and manage Kubernetes clusters directly from the Jenkins server.
+```
+This `README.md` file provides step-by-step instructions for installing the Google Cloud CLI and kubectl on your Jenkins server. Let me know if you need any further adjustments!
+```
