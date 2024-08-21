@@ -17,3 +17,9 @@ Jenkins requires Java to run. Install the default JDK and OpenJDK 11:
 sudo apt update && sudo apt install default-jdk -y && sudo apt install openjdk-11-jdk -y
 ```
 ### 2. Verify Java Installation
+- After the installation, check the Java version:
+```
+java -version
+```
+- This should display the installed Java version.
+### 3. Add Jenkins Repository Key
