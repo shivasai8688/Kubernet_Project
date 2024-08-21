@@ -40,7 +40,7 @@ sudo apt-get update && sudo apt-get install jenkins -y
 ### 6. Configure AWS Security Group
 In the AWS Management Console:
 
-*1.Navigate to the EC2 dashboard.
+* 1.Navigate to the EC2 dashboard.
 Select your Jenkins instance.
 In the Security tab, click on the security group associated with the instance.
 Edit the inbound rules and add a rule to allow traffic on port 8080 (HTTP).
