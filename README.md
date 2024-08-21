@@ -189,3 +189,39 @@ kubectl cluster-info
 
 ### Conclusion
 - You have successfully logged into Google Cloud, initialized the gcloud CLI, and created a Kubernetes cluster on your Jenkins server. You can now manage your Kubernetes cluster using kubectl and integrate it with your CI/CD pipelines.
+
+# Automated CI/CD Pipeline Setup for React, Java, and Python Applications on GKE Using Jenkins
+
+## Prerequisites
+
+Before setting up the Jenkins pipeline and deploying applications to GKE, ensure you have the following:
+
+- *Google Cloud Platform (GCP) Account* with a GKE cluster set up.
+- *AWS Virtual Machine (VM)* with Jenkins installed.
+- *Kubernetes CLI (kubectl)* configured to interact with your GKE cluster.
+- *GitHub Repositories* containing the Jenkinsfile for React, Java, and Python applications.
+- *Jenkins Kubernetes Plugins* installed on the Jenkins instance.
+
+## Steps
+
+### 1. *Jenkins Configuration on AWS VM*
+   - Install Jenkins on your AWS VM.
+   - Install and configure the necessary Kubernetes plugins in Jenkins for seamless interaction with your GKE cluster.
+
+### 2. *Pipeline Creation*
+   - *Create Jenkins Pipelines*: Set up a separate pipeline for each application (React, Java, Python) in the Jenkins UI.
+   - *Configure GitHub Repositories*: Link each pipeline to the corresponding GitHub repository by providing the path to the Jenkinsfile in the pipeline configuration.
+
+### 3. *Pipeline Execution*
+   - *Run the Pipeline*: Start the pipeline for each application from the Jenkins UI.
+   - *Build and Deployment*:
+     - The pipeline will fetch the latest code from the GitHub repository.
+     - It will then build the application.
+     - Kubernetes resources (services, deployments, PVCs) defined in the Jenkinsfile will be deployed to the GKE cluster.
+
+### 4. *Verify Deployment*
+   - *Check GKE Cluster*: Verify that the services, deployments, and persistent volume claims (PVCs) are successfully running in the GKE cluster by using kubectl commands or the Google Cloud Console.
+
+## Conclusion
+
+By following these steps, you have successfully automated the CI/CD process for React, Java, and Python applications using Jenkins on an AWS VM, deploying to a GKE cluster. This setup ensures that each code change is automatically built, tested, and deployed, allowing for more efficient and error-free management of your applications.
