@@ -39,11 +39,26 @@ sudo apt-get update && sudo apt-get install jenkins -y
 ```
 ### 6. Configure AWS Security Group
 In the AWS Management Console:
+1) Navigate to the EC2 dashboard.
+2) Select your Jenkins instance.
+3) In the Security tab, click on the security group associated with the instance.
+4) Edit the inbound rules and add a rule to allow traffic on port 8080 (HTTP).
+- Type: Custom TCP Rule
+- Port Range: 8080
+- Source: Anywhere (0.0.0.0/0) for public access.
 
-* 1.Navigate to the EC2 dashboard.
-Select your Jenkins instance.
-In the Security tab, click on the security group associated with the instance.
-Edit the inbound rules and add a rule to allow traffic on port 8080 (HTTP).
-Type: Custom TCP Rule
-Port Range: 8080
-Source: Anywhere (0.0.0.0/0) for public access.
+### 7. Access Jenkins UI
+- Once Jenkins is installed and the security group is configured, you can access the Jenkins UI in your browser using the instance's public IP and port 8080:
+```
+http://<instance-ip>:8080
+```
+### 8. Unlock Jenkins
+1) SSH into your instance.
+2) Retrieve the initial admin password:
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+3) Enter the password on the Jenkins UI to complete the setup.
+
+### Conclusion
+- Jenkins should now be installed and accessible from your browser. You can proceed with configuring your Jenkins instance and setting up your CI/CD pipelines.
