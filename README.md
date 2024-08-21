@@ -174,4 +174,18 @@ gcloud auth login
 ```
 gcloud init
 ```
-Follow the prompts to configure your environment, including selecting your Google Cloud project and setting a default region.
+- Follow the prompts to configure your environment, including selecting your Google Cloud project and setting a default region.
+#### 3. Create a Kubernetes Cluster
+- Once authenticated and initialized, you can create a Kubernetes cluster using the following command:
+```
+gcloud container clusters create mycluster --num-nodes=1
+```
+#### 4. Check Cluster Information
+- After creating the cluster, you can check the cluster's status and configuration using kubectl:
+```
+kubectl cluster-info
+```
+- This command provides information about the cluster's components and endpoints.
+
+### Conclusion
+- You have successfully logged into Google Cloud, initialized the gcloud CLI, and created a Kubernetes cluster on your Jenkins server. You can now manage your Kubernetes cluster using kubectl and integrate it with your CI/CD pipelines.
