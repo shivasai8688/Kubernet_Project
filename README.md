@@ -161,3 +161,17 @@ Run the following command to log in:
 ```
 gcloud auth login
 ```
+
+#### 1.2. Authenticate via Browser
+- After running the command, you'll receive a URL in the terminal.
+- Copy the URL and open it in your web browser.
+- Log in with your Google Cloud account.
+- After successful login, a key will be generated.
+- Copy the key and paste it back into the terminal to complete the authentication process.
+
+#### 2. Initialize gcloud CLI
+- After authentication, initialize the gcloud CLI to set up your default project and region:
+```
+gcloud init
+```
+Follow the prompts to configure your environment, including selecting your Google Cloud project and setting a default region.
