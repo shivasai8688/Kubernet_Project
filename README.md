@@ -132,6 +132,32 @@ kubectl version --client
 ```
 #### Conclusion
 - You have successfully installed the Google Cloud CLI and kubectl on your Jenkins server. You can now create and manage Kubernetes clusters directly from the Jenkins server.
+
+
+
+
+
+
+
+# Google Cloud Login and Kubernetes Cluster Creation on Jenkins Server
+
+This guide provides instructions for logging into Google Cloud, initializing the gcloud CLI, and creating a Kubernetes cluster using `gcloud` and `kubectl` on your Jenkins server.
+
+## Prerequisites
+
+- Jenkins server with Google Cloud CLI (gcloud) and kubectl installed.
+- A Google Cloud account.
+
+## Steps
+
+### 1. Login to Google Cloud
+
+Before creating a Kubernetes cluster, you need to authenticate your Jenkins server with your Google Cloud account.
+
+#### 1.1. Authenticate with gcloud
+
+Run the following command to log in:
+
 ```
-This `README.md` file provides step-by-step instructions for installing the Google Cloud CLI and kubectl on your Jenkins server. Let me know if you need any further adjustments!
+gcloud auth login
 ```
