@@ -13,7 +13,7 @@ This guide covers the steps to install Jenkins on an AWS EC2 instance running Ub
 
 Jenkins requires Java to run. Install the default JDK and OpenJDK 11:
 
-```bash
+```
 sudo apt update && sudo apt install default-jdk -y && sudo apt install openjdk-11-jdk -y
-
+```
 ### 2. Verify Java Installation
